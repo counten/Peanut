@@ -1,0 +1,11 @@
+/Peanut/build-unknown-Default/*
+/Peanut/.idea/*
+/Peanut/CMakeFiles/*
+/Peanut/CMakeLists.txt.user
+
+/backup/oldVersion/ThirdPar/mysql-connector/*
+/backup/oldVersion/.idea/*
+/backup/oldVersion/CMakeFiles/*
+/backup/oldVersion/build-unknown-Default/*
+/backup/oldVersion/CMakeLists.txt.user
+!.gitignore

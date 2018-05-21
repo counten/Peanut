@@ -1,0 +1,4 @@
+#archive .item{
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}

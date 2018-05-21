@@ -1,0 +1,3 @@
+[submodule "Peanut/ThirdP/googletest"]
+	path = Peanut/Lib/googletest
+	url = https://gitee.com/mirrors/googletest.git
