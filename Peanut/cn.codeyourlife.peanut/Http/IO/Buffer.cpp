@@ -53,7 +53,7 @@ ssize_t Buffer::readFd(int fd, int *savedErrNo)
 void Buffer::appendStr(const char *format, ...)
 {
     // TODO be more general not
-    char extraBuf[5120];
+    char extraBuf[2048];
     memset(extraBuf, 0, sizeof extraBuf);
     va_list argList;
     va_start(argList, format);

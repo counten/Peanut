@@ -287,7 +287,7 @@ void HttpHandle::responseResult(std::string content)
     writeBuffer_.appendStr("Server: Peanut\r\n");
     writeBuffer_.appendStr("Content-length: %d\r\n", content.length());
     writeBuffer_.appendStr("Content-type: %s\r\n\r\n", "text/html;charset=UTF-8");
-    writeBuffer_.appendStr(content.c_str());
+    writeBuffer_.append(content.c_str(), content.length());
 //    std::cout <<"\n报文流动4 构造响应报文: \n";
     sendFile_ = false;
 }

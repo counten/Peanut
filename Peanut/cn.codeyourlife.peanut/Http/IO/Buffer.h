@@ -34,29 +34,6 @@ private:
         return &*buffer_.begin();
     }
 
-/**
- * @Desc add string to buffer_
- * and move the writerIndex_ to correct location;
- * */
-    void append(const char *data, size_t len)
-    {
-        if (writeAbleSize() < len)
-        {
-            if (writeAbleSize() + rIndex_ < len )
-            {
-                // Re malloc store space;
-                buffer_.resize(wIndex_ + len);
-            }
-            else
-            {
-                std::copy(begin() + rIndex_, begin() + wIndex_, begin());
-                rIndex_ = 0;
-                wIndex_ = rIndex_ + readAbleSize();
-            }
-        }
-        std::copy(data, data + len, begin() + wIndex_);
-        wIndex_ += len;
-    }
 
 public:
 
@@ -116,6 +93,29 @@ public:
         }
     }
 
+    /**
+     * @Desc add string to buffer_
+     * and move the writerIndex_ to correct location;
+     * */
+        void append(const char *data, size_t len)
+        {
+            if (writeAbleSize() < len)
+            {
+                if (writeAbleSize() + rIndex_ < len )
+                {
+                    // Re malloc store space;
+                    buffer_.resize(wIndex_ + len);
+                }
+                else
+                {
+                    std::copy(begin() + rIndex_, begin() + wIndex_, begin());
+                    rIndex_ = 0;
+                    wIndex_ = rIndex_ + readAbleSize();
+                }
+            }
+            std::copy(data, data + len, begin() + wIndex_);
+            wIndex_ += len;
+        }
 
 /**
  * @Desc read buf from socket;
