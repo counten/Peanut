@@ -97,8 +97,13 @@ bool HttpReq::parseRequestLine(Buffer &buf)
 {
     char method[64], path[256], version[64];
     char *line = buf.getLine();
+    if(line == nullptr)
+    {
+        Peanut::logError("error getline");
+        delete[] line;
+        return false;
+    }
     sscanf(line, "%s %s %s", method, path, version);
-//    std::cout <<"\n报文流动2 起始行: "<< method <<" "<<path<<" "<< version << "\n";
     setMethod(method, strlen(method));
     setPath(path);
     delete[] line;
@@ -132,10 +137,8 @@ bool HttpReq::parseHeaders(Buffer &buf) // Other head info
         // If have content_ store content_;
         else if(strstr(line, "<end>"))
         {
-//            std::cout <<"\n报文流动2: 头部"<< line<<"\n";
             content_ = line;
             content_ = content_.substr(0, content_.find("<end>"));
-//            std::cout<<"\ncontent:0 "<<content_<<"\n";
         }
         delete[] line;
     }

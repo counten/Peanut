@@ -70,7 +70,6 @@ bool HttpHandle::read()
     while (true)
     {
         int savedErrNo;
-//        std::cout<< "\n报文流动1: ";
         byteRead = readBuffer_.readFd(sockFd_, &savedErrNo);
         if (byteRead == -1)
         {
@@ -144,8 +143,7 @@ void HttpHandle::processRead()
             std::string url = request_.path_;
             url = url.substr(0, url.find_first_of('?'));
             result = (*_controllerMap[url])(reqInfo);
-//            std::cout <<"\n报文流动3 调用后端接口: 请求方法: "<<url<<" 结果:"<<result<<"\n";
-        }
+      }
         else if(!strcasecmp(request_.method_.c_str(), METHOD_POST))
         {
             reqInfo.package(this->clientIP_, request_.path_, request_.content_);
@@ -193,7 +191,6 @@ void HttpHandle::processWrite()
 		while (true)
         {
 			size_t len = writeBuffer_.readAbleSize();
-//			std::cout<< "\n 报文流动4: 发送响应报文 "<< writeBuffer_.readLoc()<<"\n";
 			res = write(sockFd_, writeBuffer_.readLoc(), len);
 			if (res < 0)
             {

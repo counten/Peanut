@@ -5,9 +5,10 @@
 */
 
 #include "Buffer.h"
-
+#include "../../Log/Log.h"
 #include <sys/socket.h>
 #include <cstdarg>
+#include <new>
 #include<sys/uio.h>
 
 /**
@@ -80,18 +81,35 @@ char* Buffer::getLine()
             return nullptr;
         }
         retrieve(size);
-        char* res = new char[size + 5];
+        char* res;
+        try
+        {
+            res = new char[size + 5];
+        }
+        catch(const std::bad_alloc &memExp)
+        {
+            res = nullptr;
+            Peanut::logError(memExp.what());
+        }
         std::copy(start, start + size, res);
         const char* flag="<end>";
         std::copy(flag,flag+5, res+size);
-//        std::cout<< "\nres: "<< res << "\n";
         return res;
     }
     else
     {
         size = end - start - 1;
         retrieve(size + 2);
-        char* res = new char[size];
+        char* res;
+        try
+        {
+            res  = new char[size];
+        }
+        catch(const std::bad_alloc &memExp)
+        {
+            res = nullptr;
+           Peanut::logError(memExp.what());
+        }
         std::copy(start, start + size, res);
         return res;
     }
