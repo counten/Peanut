@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CodeYourLife | Editor</title>
+  <script src="../js/util.js"></script>  
+  <script>
+      // check login
+      if(getCookie("uName") == null || getCookie("uEmail" == null)) {
+        window.location.href = "../index.html";
+      }
+  </script>
+  <link rel="stylesheet" href="lib/material-icons.css">
+  <link rel="stylesheet" href="lib/base16-light.css">
+  <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="lib/default.css">
+  <link rel="stylesheet" href="lib/github-markdown.css">
+  <link rel="stylesheet" href="lib/spell-checker.min.css">
+  <link rel="stylesheet" href="editor.css">
+  <link rel="stylesheet" href="../css/dialog.css">
+  
+  <!-- release use -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+
+  <!-- debug use -->
+  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css">  
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script> -->
+  <script src="../js/baidu.js"></script> </head>
+
+<body id="toplevel">
+  <div id="in">
+    <form>
+      <textarea id="code"># New Blog</textarea>
+    </form>
+  </div>
+  <div id="out" class="markdown-body"></div>
+
+
+  <div id="navbar">
+    <div id="navcontent">
+      <a id="logo" href="../index.html" tooltip="Home">
+        <p id="title" class="left">CodeYourLife</p>
+      </a>
+      <p id="openbutton" title="Open from Disk" class="navbutton left" onclick="document.getElementById('fileInput').click();">
+        <i class="material-icons">open_in_browser</i>
+      </p>
+      <input id="fileInput" type="file" class="hidden" accept=".md,.mdown,.txt,.markdown" />
+      <p id="savebutton" title="Download" class="navbutton left" onclick="jQuery.dialog({
+          title: 'Save As',
+          message_type: 'html',
+          message: '<div id=saveas-markdown onclick=saveAsMarkdown()><img src=../img/markdown.png width=48px; height=48px><span>Markdown</span></div><div id=saveas-html onclick=saveAsHtml()><img src=../img/html.png><span>HTML</span></div>'
+      })">
+        <i class="material-icons">file_download</i>
+      </p>
+      <p id="browsersavebutton" title="Save In Browser" class="navbutton left" onclick="saveInBrowser()">
+        <i class="material-icons">save</i>
+      </p>
+      <p id="sharebutton" title="Generate Shareable Link" class="navbutton left" onclick="updateHash()">
+        <i class="material-icons">share</i>
+      </p>
+      <p id="nightbutton" title="Night Mode" class="navbutton left" onclick="toggleNightMode(this)">
+        <i class="material-icons">invert_colors</i>
+      </p>
+      <p id="readbutton" title="Reading Mode" class="navbutton left" onclick="toggleReadMode(this)">
+        <i class="material-icons">chrome_reader_mode</i>
+      </p>
+      <p id="newbutton" title="Clear Editor" class="navbutton left" onclick="clearEditor()">
+        <i class="material-icons">view_quilt</i>
+      </p>
+      <p id="sendButton" title="Release Blog" class="navbutton left" onclick="beforeRelease()">
+        <i class="material-icons">send</i>
+      </p>
+    </div>
+  </div>
+
+</body>
+<!-- <script src="codemirror/lib/codemirror.js"></script> -->
+<script src="http://p6b0e4z7i.bkt.clouddn.com/codemirror.js"></script>
+<script src="codemirror/overlay.js"></script>
+<script src="codemirror/xml/xml.js"></script>
+<script src="codemirror/markdown/markdown.js"></script>
+<script src="codemirror/gfm/gfm.js"></script>
+<script src="codemirror/javascript/javascript.js"></script>
+<script src="codemirror/css/css.js"></script>
+<script src="codemirror/htmlmixed/htmlmixed.js"></script>
+<script src="codemirror/lib/util/continuelist.js"></script>
+<!-- <script src="lib/markdown-it.min.js"></script> -->
+<script src="https://cdn.bootcss.com/markdown-it/8.4.1/markdown-it.min.js"></script>
+<script src="lib/markdown-it-footnote.js"></script>
+<script src="lib/highlight.pack.js"></script>
+<script src="lib/emojify.js"></script>
+<script src="lib/spell-checker.min.js"></script>
+<script src="lib/rawinflate.js"></script>
+<script src="lib/rawdeflate.js"></script>
+<script src="../js/dialog.js"></script>
+<script src="editor.js"></script>
+
+</html>

@@ -1,0 +1,34 @@
+html,body{
+    height:100%
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration:none;
+}
+.wrap{
+    min-height:100%
+}
+
+/* main 文字居中 */
+.main
+{
+width: 100%;
+padding-bottom:90px;
+overflow:hidden;
+padding-left: 10%;
+padding-right: 10%;
+}
+
+/* footer 固定在页面底部，并居中  */
+.footer
+{
+    margin-top:-90px;
+    height:90px;
+    width: 100%;
+    text-align:center;
+    background-color: #e7e7e7;
+}
+
+
