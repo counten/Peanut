@@ -162,6 +162,7 @@
     </layout>
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".gitmodules" />
     <option featureType="com.intellij.fileTypeFactory" implementationName=".gitignore" />
   </component>
   <component name="editorHistoryManager">

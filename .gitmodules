@@ -1,0 +1,6 @@
+[submodule "Peanut/Lib/googletest"]
+	path = Peanut/Lib/googletest
+	url = https://github.com/google/googletest.git
+[submodule "Peanut/src/Util/PeanutJson"]
+	path = Peanut/src/Util/PeanutJson
+	url = https://github.com/wbq813/PeanutJson.git
