@@ -1,6 +1,6 @@
 [submodule "Lib/googletest"]
 	path = Lib/googletest
-	url = https://github.com/googletest.git
+	url = https://github.com/google/googletest.git
 
 [submodule "src/Util/PeanutJson"]
 	path = src/Util/PeanutJson
