@@ -1,4 +1,4 @@
 .cproject
 .project
-/build/
+/cmake-build-debug/
 !.gitignore

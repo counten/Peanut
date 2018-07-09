@@ -7,8 +7,8 @@
 #include <iostream>
 
 // Inner Project
-#include "../../cn.codeyourlife.peanut/Util/StrUtil.h"
-#include "../../cn.codeyourlife.peanut/Conf/Defination.h"
+#include "../../src/Util/StrUtil.h"
+#include "../../src/Conf/Defination.h"
 
 using namespace std;
 

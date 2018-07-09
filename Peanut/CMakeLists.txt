@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 # module source file ***********************************************
-set(PEANUT cn.codeyourlife.peanut)
+set(PEANUT src)
 
 set(MODULE_CONF
         ${PEANUT}/Conf/Conf.h

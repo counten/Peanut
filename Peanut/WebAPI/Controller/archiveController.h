@@ -8,9 +8,9 @@
 #define PEANUT_ARCHIVECONTROLLER_H
 
 #include <iostream>
-#include "../../cn.codeyourlife.peanut/Http/IO/ReqInfo.h"
-#include "../../cn.codeyourlife.peanut/Database/QueryResult.h"
-#include "../../cn.codeyourlife.peanut/Conf/Defination.h"
+#include "../../src/Http/IO/ReqInfo.h"
+#include "../../src/Database/QueryResult.h"
+#include "../../src/Conf/Defination.h"
 
 static std::string archive(ReqInfo mnRequest)
 {

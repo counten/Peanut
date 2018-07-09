@@ -6,7 +6,7 @@
 
 // Inner project
 #include "../Bin/EPollUtil.h"
-#include "../Http/Tcp.h"
+#include "Tcp.h"
 
 using namespace Peanut;
 

@@ -5,12 +5,12 @@
 */
 
 #include <iostream>
-#include "../../cn.codeyourlife.peanut/Database/QueryResult.h"
-#include "../../cn.codeyourlife.peanut/Database/Pool.h"
-#include "../../cn.codeyourlife.peanut/Conf/Defination.h"
-#include "../../cn.codeyourlife.peanut/Database/Transaction.h"
-#include "../../cn.codeyourlife.peanut/Util/TimeUtil.h"
-#include "../../cn.codeyourlife.peanut/Util/StrUtil.h"
+#include "../../src/Database/QueryResult.h"
+#include "../../src/Database/Pool.h"
+#include "../../src/Conf/Defination.h"
+#include "../../src/Database/Transaction.h"
+#include "../../src/Util/TimeUtil.h"
+#include "../../src/Util/StrUtil.h"
 
 using namespace Peanut;
 using namespace std;

@@ -8,7 +8,7 @@
 #define PEANUT_TAGCONTROLLER_H
 
 #include <iostream>
-#include "../../cn.codeyourlife.peanut/Http/IO/ReqInfo.h"
+#include "../../src/Http/IO/ReqInfo.h"
 
 /**
  * @Desc Get all the tags;
