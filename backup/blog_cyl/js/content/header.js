@@ -35,7 +35,15 @@ html += "<a href=\"tags.html\"> Tags";
 html += "</a>";
 html += "</li>";
 html += "<li class=\"\">";
-html += "<a href=\"/detail.html?id=detial1523694632\"> Products";
+html += "<a href=\"author.html?id=system001\"> Author";
+html += "</a>";
+html += "</li>";
+html += "<li class=\"\">";
+html += "<a href=\"product.html?id=system002\"> Products";
+html += "</a>";
+html += "</li>";
+html += "<li class=\"\">";
+html += "<a href=\"favorite.html?id=system003\"> Favorite";
 html += "</a>";
 html += "</li>";
 
@@ -45,7 +53,7 @@ html += "<a id=\"login_btn\" href=\"javascript:;\">Sin in|up</a>";
 
 html += "<ul id = \"drop_down_list\" class=\"sub-menu\">";
 html += "<li><a href=\"editor/index.html\">Create Blog</a></li>";
-html += "<li><a href=\"manage.html\">Manage Blogs</a></li>";
+html += "<li><a href=\"manage.html\">Manage</a></li>";
 html += "<li><a id=\"logout_btn\" href=\"javascript:;\">Sin Out</a></li>";
 html += "</ul>";
 
