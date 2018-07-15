@@ -35,15 +35,15 @@ html += "<a href=\"tags.html\"> Tags";
 html += "</a>";
 html += "</li>";
 html += "<li id='index3'>";
-html += "<a href=\"author.html?id=system001\"> Author";
+html += "<a href=\"author.html\"> Author";
 html += "</a>";
 html += "</li>";
 html += "<li id='index4'>";
-html += "<a href=\"product.html?id=system002\"> Products";
+html += "<a href=\"product.html\"> Products";
 html += "</a>";
 html += "</li>";
 html += "<li id='index5'>";
-html += "<a href=\"favorite.html?id=system003\"> Favorite";
+html += "<a href=\"favorite.html\"> Favorite";
 html += "</a>";
 html += "</li>";
 
