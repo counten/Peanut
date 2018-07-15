@@ -1,5 +1,5 @@
 /**
- * @authors miclewang@outlook.com
+ * @authors wbq813@foxmail.com
  * @date    2018-03-03
  */
 
@@ -22,27 +22,27 @@ html += "</div>";
 html += "<!-- Collect the nav links, forms, and other content for toggling -->";
 html += "<div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">";
 html += "<ul class=\"nav navbar-nav navbar-right\">";
-html += "<li class=\"active\">";
+html += "<li id='index0'>";
 html += "<a href=\"index.html\"> Blog";
 html += "</a>";
 html += "</li>";
-html += "<li class=\"\">";
+html += "<li id='index1'>";
 html += "<a href=\"archives.html\"> Archives";
 html += "</a>";
 html += "</li>";
-html += "<li class=\"\">";
+html += "<li id='index2'>";
 html += "<a href=\"tags.html\"> Tags";
 html += "</a>";
 html += "</li>";
-html += "<li class=\"\">";
+html += "<li id='index3'>";
 html += "<a href=\"author.html?id=system001\"> Author";
 html += "</a>";
 html += "</li>";
-html += "<li class=\"\">";
+html += "<li id='index4'>";
 html += "<a href=\"product.html?id=system002\"> Products";
 html += "</a>";
 html += "</li>";
-html += "<li class=\"\">";
+html += "<li id='index5'>";
 html += "<a href=\"favorite.html?id=system003\"> Favorite";
 html += "</a>";
 html += "</li>";
@@ -66,3 +66,27 @@ html += "</div>";
 html += "</nav>";
 
 oHeader.innerHTML = html;
+$(document).ready(function() {
+	var title = document.title;
+	var activeIn ;
+	switch (title){
+        case "CodeYourLife | Archives":
+            activeIn = "index1"
+            break
+        case "CodeYourLife | Tags":
+            activeIn = "index2"
+            break
+        case "CodeYourLife | Author":
+            activeIn = "index3"
+            break
+        case "CodeYourLife | Product":
+            activeIn = "index4"
+            break
+        case "CodeYourLife | Favorite":
+            activeIn = "index5"
+            break
+        default:
+            activeIn = "index0";
+	}
+	document.getElementById(activeIn).setAttribute("class","active");
+});

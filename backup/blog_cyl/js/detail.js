@@ -1,5 +1,5 @@
 /**
- * @authors miclewang@outlook.com
+ * @authors wbq813@foxmail.com
  * @date    2018-03-03
  */
 var oDetail = document.getElementById("detail");
