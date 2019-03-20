@@ -35,10 +35,23 @@ void blockSig(int sigNo) {
  * @Desc Use EPoll and thread poll to solve request;
  * */
 void Peanut::SchemeEPollThreadPool() {
-    // Read config file;
-
     int listenFd = OpenListenFd(S2i(getValue(CFG_SERVER, CFG_SERVER_PORT)));
     logInfo("ServerInit: Listen to port!");
+
+    // multi process.
+    for(int i =1; i<4; i++)
+    {
+        pid_t pid =  fork();
+        if(pid ==0)
+        {
+            break;
+        } else if(pid < 0)
+        {
+            logError("fork error");
+            continue;
+        }
+    }
+
 
     epoll_event events[MAX_EVENT_NUM];
     sockaddr clnAdd;
@@ -54,6 +67,7 @@ void Peanut::SchemeEPollThreadPool() {
     logInfo("ServerInit: Create thread pool!");
     logSuccess("ServerInit: OK!");
 
+    logInfo("Run process:", getpid());
     while(true)
     {
         int eventNum = EPollWait(ePollFd, events, MAX_EVENT_NUM, -1);
