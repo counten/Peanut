@@ -41,7 +41,7 @@ void HttpHandle::process()
             removeFd(ePollFd_, sockFd_);
             break;
     }
-    /*-
+    /**
     * 程序执行完成后,有这么一些状态kExpectRead, ExpectWrite, Error, Success
     */
     switch (state_)

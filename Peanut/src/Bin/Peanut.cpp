@@ -39,18 +39,18 @@ void Peanut::SchemeEPollThreadPool() {
     logInfo("ServerInit: Listen to port!");
 
     // multi process.
-    for(int i =1; i<4; i++)
-    {
-        pid_t pid =  fork();
-        if(pid ==0)
-        {
-            break;
-        } else if(pid < 0)
-        {
-            logError("fork error");
-            continue;
-        }
-    }
+//    for(int i =1; i<4; i++)
+//    {
+//        pid_t pid =  fork();
+//        if(pid ==0)
+//        {
+//            break;
+//        } else if(pid < 0)
+//        {
+//            logError("fork error");
+//            continue;
+//        }
+//    }
 
 
     epoll_event events[MAX_EVENT_NUM];
