@@ -34,7 +34,8 @@ private:
     const char *_socket;                        // can be Socket or Pipeline, used to be NULL
     unsigned long _client_flag;
     unsigned int _MAX_CONNECT;                  // Max connection num;
-    unsigned int _connect_count;                // Current connection num;
+    // new version g++ default of int not 0, make sure to init.
+    unsigned int _connect_count = 0;            // Current connection num;
     static std::mutex _objectLock;              // Object lock
     static std::mutex _poolLock;                // Connection pool lock
     static Pool *_poolObject;                   // object
