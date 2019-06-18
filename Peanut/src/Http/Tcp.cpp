@@ -69,7 +69,7 @@ int Peanut::OpenListenFd(int port)
     }
 
     /** Eliminates "Address already in use" error from bind. */
-    if (SetSockOpt(listenFd, SOL_SOCKET, SO_REUSEADDR, (const void *)&optVal, sizeof(int)) < 0)
+    if (SetSockOpt(listenFd, SOL_SOCKET, SO_REUSEADDR, (const void *)&optVal, sizeof(optVal)) < 0)
     {
         return -1;
     }

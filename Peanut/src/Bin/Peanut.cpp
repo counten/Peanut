@@ -54,6 +54,7 @@ void Peanut::SchemeEPollThreadPool() {
 
 
     epoll_event events[MAX_EVENT_NUM];
+    // client information.
     sockaddr clnAdd;
     socklen_t clnLen = sizeof(clnAdd);
 
@@ -77,6 +78,9 @@ void Peanut::SchemeEPollThreadPool() {
             if (sockFd == listenFd) { /** receive connection */
                 while(true)
                 {
+                    /**The returned socket descriptor connect with client;
+                     * listenFd do not associate with client, and keep be used to receive other connection.
+                     */
                     int connFd = accept(listenFd, &clnAdd, &clnLen);
                     if (connFd == -1) {
                         if ((errno == EAGAIN) || (errno == EWOULDBLOCK))
